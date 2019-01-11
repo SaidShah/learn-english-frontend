@@ -1,4 +1,4 @@
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {connect} from 'react-redux'
 import {logout} from '../../redux/thunk/usersThunk'
 
@@ -13,7 +13,6 @@ class NavBarLoggedIn extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <>
       <li className="dropdown">

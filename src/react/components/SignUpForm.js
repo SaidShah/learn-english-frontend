@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {signUp} from '../../redux/action/userActions'
 import {createUser} from '../../redux/thunk/usersThunk'
-import {Redirect} from 'react-router-dom'
+import logo from '../../images/logo.png'
 
 class SignUpForm extends Component {
   state={
@@ -35,7 +34,7 @@ class SignUpForm extends Component {
         <div className="col-sm-6 col-md-4 col-md-offset-4">
             <h1 className="text-center login-title">Sign Up To Continue</h1>
             <div className="account-wall">
-                <img className="profile-img" src="" alt=""/>
+                <img className="profile-img" src={logo} alt=""/>
                 <form className="form-signin form-padding" onSubmit={(e)=>{this.handleSubmit(e,this.state)}}>
                 <input type="text" className="form-control  form-padding" placeholder="First Name" name="first_name" value={this.state.first_name} onChange={this.handleChange} required autoFocus/>
                 <input type="text" className="form-control  form-padding" placeholder="Last Name" name="last_name" value={this.state.last_name} onChange={this.handleChange}  required autoFocus/>
@@ -51,7 +50,7 @@ class SignUpForm extends Component {
                     <input type="checkbox" value="remember-me"/>
                     Remember me
                 </label>
-                <a href="#" className="pull-right need-help">Need help? </a><span className="clearfix"></span>
+
                 </form>
             </div>
         </div>

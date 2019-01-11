@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {login} from '../../redux/thunk/usersThunk'
+import logo from '../../images/logo.png'
 
 class LogInForm extends Component {
 
@@ -31,7 +32,7 @@ class LogInForm extends Component {
         <div className="col-sm-6 col-md-4 col-md-offset-4">
             <h1 className="text-center login-title">Sign Up To Continue</h1>
             <div className="account-wall">
-                <img className="profile-img" src="" alt=""/>
+                <img className="profile-img" src={logo} alt=""/>
                 <form className="form-signin form-padding" onSubmit={(e)=>{this.handleSubmit(e)}}>
                 <input type="text" className="form-control form-padding" placeholder="Username" name="username" onChange={this.handleChange} value={this.state.username} required autoFocus/>
                 <input type="password" className="form-control form-padding" placeholder="Password" name="password" onChange={this.handleChange} value={this.state.password} required/>
@@ -41,7 +42,6 @@ class LogInForm extends Component {
                     <input type="checkbox" value="remember-me"/>
                     Remember me
                 </label>
-                <a href="#" className="pull-right need-help">Need help? </a><span className="clearfix"></span>
                 </form>
             </div>
         </div>

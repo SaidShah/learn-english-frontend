@@ -5,7 +5,7 @@ import SignUpForm from '../components/SignUpForm'
 import LogInForm from '../components/LogInForm'
 import Profile from '../components/Profile'
 import Home from '../components/Home'
-import {connect} from 'react-redux'
+import Footer from '../components/Footer'
 
 class WholePageContainer extends Component {
 
@@ -23,6 +23,7 @@ class WholePageContainer extends Component {
          <Route path="/profile" render={()=><Profile/>}/>
          <Route  path="/" render={()=><Home/>}/>
         </Switch>
+        <Footer/>
         </div>
       </div>
     );
@@ -30,8 +31,5 @@ class WholePageContainer extends Component {
 
 }
 
-const mapStateToProps =(state)=>{
-  return{ user: state.user}
-}
 
 export default withRouter(WholePageContainer);

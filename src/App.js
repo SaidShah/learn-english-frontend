@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import WholePageContainer from './react/containers/WholePageContainer'
 import './App.css';
-import {withRouter, Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {resetUser} from './redux/thunk/usersThunk'
 

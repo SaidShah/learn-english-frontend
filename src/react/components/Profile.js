@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import SignUpForm from './SignUpForm'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 import {editUser} from '../../redux/thunk/usersThunk'
+import logo from '../../images/logo.png'
 
 class Profile extends Component {
   state={
@@ -11,10 +11,9 @@ class Profile extends Component {
     age: '',
     username: ''
   }
+
   componentDidMount() {
-
     this.setState({...this.props.user})
-
   }
 
   handleChange=(e)=>{
@@ -37,9 +36,9 @@ class Profile extends Component {
         <div className="container">
       <div className="row">
           <div className="col-sm-6 col-md-4 col-md-offset-4">
-              <h1 className="text-center login-title">Sign Up To Continue</h1>
+              <h1 className="text-center login-title">Profile</h1>
               <div className="account-wall">
-                  <img className="profile-img" src="" alt=""/>
+                  <img className="profile-img" src={logo} alt=""/>
                   <form className="form-signin form-padding" onSubmit={(e)=>{this.handleSubmit(e,this.state)}}>
                   <input type="text" className="form-control  form-padding" placeholder="First Name" name="first_name" value={this.state.first_name} onChange={this.handleChange} required autoFocus/>
                   <input type="text" className="form-control  form-padding" placeholder="Last Name" name="last_name" value={this.state.last_name} onChange={this.handleChange}  required autoFocus/>
@@ -52,7 +51,6 @@ class Profile extends Component {
                       <input type="checkbox" value="remember-me"/>
                       Remember me
                   </label>
-                  <a href="#" className="pull-right need-help">Need help? </a><span className="clearfix"></span>
                   </form>
               </div>
           </div>

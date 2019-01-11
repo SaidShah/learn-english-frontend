@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import NavBarLoggedIn from "./NavBarLoggedIn";
 import NavBarLoggedOut from "./NavBarLoggedOut";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import {connect} from 'react-redux'
+
 
 class Navbar extends Component {
   render() {
