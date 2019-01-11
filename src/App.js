@@ -11,13 +11,13 @@ class App extends Component {
 
   resetUser=()=>{
     this.props.resetUser(localStorage.token)
+
   }
 
   render() {
-    console.log(this.props, "PROPS IN APP");
     return (
       <div>
-        {localStorage.token ? this.resetUser() : null }
+        {!this.props.user.id && localStorage.token ? this.resetUser() : null }
         <WholePageContainer/>
       </div>
     );

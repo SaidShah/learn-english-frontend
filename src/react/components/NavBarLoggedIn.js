@@ -4,6 +4,11 @@ import React, { Component } from 'react';
 
 class NavBarLoggedIn extends Component {
 
+  logout=()=>{
+    localStorage.removeItem("token")
+    this.props.browserProps.history.push("/")
+  }
+
   render() {
     return (
       <>
@@ -29,7 +34,7 @@ class NavBarLoggedIn extends Component {
       </li>
       <ul className="nav navbar-nav navbar-right">
       <li>
-        <Link to="/">
+        <Link to="/" onClick={this.logout}>
           <span className="glyphicon glyphicon-log-out" /> Log out
         </Link>
       </li>

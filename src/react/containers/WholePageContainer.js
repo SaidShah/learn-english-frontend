@@ -14,7 +14,7 @@ class WholePageContainer extends Component {
     return (
       <div>
       <div  className="app gray-background">
-        <Navbar />
+        <Navbar browserProps={this.props}/>
       </div>
         <div>
         <Switch>

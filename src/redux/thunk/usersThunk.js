@@ -20,6 +20,14 @@ export const createUser = (user) =>{
 
 export const resetUser = (token) =>{
   return function thunk (dispatch){
-  
+    return fetch("http://localhost:3002/current_user",{method: "GET",
+      headers:{"Content-Type":"application/json",
+            Action:"application/json",
+            Authorization: `${token}`}
+    }).then(res => res.json())
+      .then(user =>{
+        localStorage.setItem("token", user.jwt)
+        dispatch(resetUserOnRefresh(user.user))
+      })
   }
 }
