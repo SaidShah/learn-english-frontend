@@ -25,3 +25,10 @@ export const logoutUser = (user) =>{
     payload: user
   }
 }
+
+export const editUserProfile =(user)=>{
+  return {
+    type: "EDIT_USER",
+    payload: user
+  }
+}

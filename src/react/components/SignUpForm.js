@@ -6,11 +6,11 @@ import {Redirect} from 'react-router-dom'
 
 class SignUpForm extends Component {
   state={
-    first_name: '',
-    last_name: '',
-    age: '',
-    username: '',
-    password: ''
+      first_name: '',
+      last_name: '',
+      age: '',
+      username: '',
+      password: ''
   }
 
   handleChange=(e)=>{
@@ -42,7 +42,9 @@ class SignUpForm extends Component {
                 <input type="number" className="form-control form-padding" placeholder="Age" name="age" value={this.state.age}
                  onChange={this.handleChange}  required autoFocus/>
                 <input type="text" className="form-control form-padding" placeholder="Username" name="username" value={this.state.username} onChange={this.handleChange}  required autoFocus/>
+                {this.props.user.id ? null :
                 <input type="password" className="form-control form-padding" placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange}  required/>
+                 }
                 <button className="btn btn-lg btn-primary btn-block form-control" type="submit">
                     Create Account</button>
                 <label className="checkbox pull-left clearfix checkbox-padding">
@@ -67,5 +69,8 @@ const mapDispatchToProps =(dispatch)=>{
       createUser: (e)=> dispatch(createUser(e))
   }
 }
+const mapStateToProps =(state)=>{
+  return{user: state.user}
+}
 
-export default connect(null,mapDispatchToProps)(SignUpForm)
+export default connect(mapStateToProps,mapDispatchToProps)(SignUpForm)

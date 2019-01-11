@@ -1,4 +1,4 @@
-import {signUp, resetUserOnRefresh, loginUser, logoutUser} from '../action/userActions'
+import {signUp, resetUserOnRefresh, loginUser, logoutUser, editUserProfile} from '../action/userActions'
 
 
 export const createUser = (user) =>{
@@ -55,5 +55,20 @@ export const logout = (user)=>{
   return function thunk(dispatch) {
     localStorage.removeItem("token")
     dispatch(logoutUser(loggedOut))
+  }
+}
+
+export const editUser = (user) =>{
+  let editedUser = JSON.stringify({user:{first_name: user.first_name, last_name: user.last_name, age: user.age, username: user.username, id: user.id}})
+  return function thunk(dispatch){
+    return fetch(`http://localhost:3002/users/${user.id}`,{method:"PATCH",
+    headers: {
+      "Content-Type":"application/json",
+      Accepts: "application/json"},
+    body: editedUser
+  }).then(res=>res.json())
+    .then(user => {
+      dispatch(editUserProfile(user))
+    })
   }
 }

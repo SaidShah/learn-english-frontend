@@ -12,7 +12,7 @@ class LogInForm extends Component {
   handleSubmit=(e)=>{
     e.preventDefault()
     this.props.login(this.state)
-    this.props.browserProps.history.push("/") 
+    this.props.browserProps.history.push("/")
   }
 
   handleChange=(e)=>{
@@ -28,7 +28,7 @@ class LogInForm extends Component {
       <div className="center-div">
       <div className="container">
         <div className="row">
-        <div className="col-sm-6 col-md-6 col-md-offset-4">
+        <div className="col-sm-6 col-md-4 col-md-offset-4">
             <h1 className="text-center login-title">Sign Up To Continue</h1>
             <div className="account-wall">
                 <img className="profile-img" src="" alt=""/>
