@@ -14,11 +14,11 @@ class WholePageContainer extends Component {
     return (
       <div>
       <div  className="app gray-background">
-        <Navbar/>
+        <Navbar />
       </div>
         <div>
         <Switch>
-         <Route path="/signup" render={()=><SignUpForm/>}/>
+         <Route path="/signup" render={()=><SignUpForm browserProps={this.props}/>}/>
          <Route path="/login" render={()=><LogInForm/>}/>
          <Route path="/profile" render={()=><Profile/>}/>
          <Route  path="/" render={()=><Home/>}/>

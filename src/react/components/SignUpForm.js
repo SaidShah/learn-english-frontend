@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
 import {signUp} from '../../redux/action/userActions'
+import {createUser} from '../../redux/thunk/usersThunk'
+import {Redirect} from 'react-router-dom'
 
 class SignUpForm extends Component {
   state={
@@ -19,11 +21,13 @@ class SignUpForm extends Component {
 
   handleSubmit=(e,user)=>{
     e.preventDefault()
-    this.props.signUp(user)
+    this.props.createUser(user)
+    this.props.browserProps.history.push("/")
   }
 
 
   render() {
+
     return (
       <div className="center-div">
       <div className="container">
@@ -60,7 +64,7 @@ class SignUpForm extends Component {
 
 const mapDispatchToProps =(dispatch)=>{
   return{
-      signUp: (e)=> dispatch(signUp(e))
+      createUser: (e)=> dispatch(createUser(e))
   }
 }
 

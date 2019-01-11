@@ -4,3 +4,10 @@ export const signUp = (user) =>{
     payload: user
   }
 }
+
+export const resetUserOnRefresh=(user)=>{
+  return{
+    type: "GET_USER",
+    payload: user
+  }
+}

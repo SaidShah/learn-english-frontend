@@ -29,7 +29,6 @@ class LogInForm extends Component {
 </div>
     );
   }
-
 }
 
 export default LogInForm;

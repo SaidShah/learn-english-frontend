@@ -4,14 +4,13 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { BrowserRouter } from "react-router-dom";
 import userReducer from "./redux/reducer/userReducer";
+import thunk from 'redux-thunk'
 
 const store = createStore(
-  userReducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+  userReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
   <Provider store={store}>

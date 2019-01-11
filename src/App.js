@@ -3,16 +3,33 @@ import React, { Component } from 'react';
 import WholePageContainer from './react/containers/WholePageContainer'
 import './App.css';
 import {withRouter, Redirect} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {resetUser} from './redux/thunk/usersThunk'
 
 
 class App extends Component {
+
+  resetUser=()=>{
+    this.props.resetUser(localStorage.token)
+  }
+
   render() {
+    console.log(this.props, "PROPS IN APP");
     return (
       <div>
+        {localStorage.token ? this.resetUser() : null }
         <WholePageContainer/>
       </div>
     );
   }
 }
 
-export default withRouter(App);
+const mapDispatchToProps = (dispatch)=>{
+  return {resetUser: (e)=>dispatch(resetUser(e))}
+}
+
+const mapStateToProps =(state)=>{
+  return {user: state.user}
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

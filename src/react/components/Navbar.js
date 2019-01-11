@@ -6,14 +6,13 @@ import {connect} from 'react-redux'
 
 class Navbar extends Component {
   render() {
-
     return (
       <div>
         <nav className="navbar navbar-blue text-color">
           <div className="container-fluid ">
             <div className="navbar-header">
             <a className="navbar-brand text-color" href="/">
-            Learn-English
+            ZaiN
             </a>
             </div>
             <ul className="nav navbar-nav">
