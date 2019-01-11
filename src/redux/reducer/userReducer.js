@@ -8,6 +8,10 @@ const userReducer = (state=initialState, action)=>{
          return{...state,user:action.payload}
     case 'SIGN_UP':
          return{...state,user:action.payload}
+    case 'LOGIN':
+          return {...state, user: action.payload}
+    case 'LOGOUT':
+          return{...state, user: action.payload}
     default:
     return state;
   }

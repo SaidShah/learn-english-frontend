@@ -11,3 +11,17 @@ export const resetUserOnRefresh=(user)=>{
     payload: user
   }
 }
+
+export const loginUser =(user)=>{
+  return {
+    type: "LOGIN",
+    payload: user
+  }
+}
+
+export const logoutUser = (user) =>{
+  return {
+    type: "LOGOUT",
+    payload: user
+  }
+}

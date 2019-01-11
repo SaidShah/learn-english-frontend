@@ -19,7 +19,7 @@ class WholePageContainer extends Component {
         <div>
         <Switch>
          <Route path="/signup" render={()=><SignUpForm browserProps={this.props}/>}/>
-         <Route path="/login" render={()=><LogInForm/>}/>
+         <Route path="/login" render={()=><LogInForm browserProps={this.props}/>}/>
          <Route path="/profile" render={()=><Profile/>}/>
          <Route  path="/" render={()=><Home/>}/>
         </Switch>

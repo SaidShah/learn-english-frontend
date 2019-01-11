@@ -1,4 +1,4 @@
-import {signUp, resetUserOnRefresh} from '../action/userActions'
+import {signUp, resetUserOnRefresh, loginUser, logoutUser} from '../action/userActions'
 
 
 export const createUser = (user) =>{
@@ -29,5 +29,31 @@ export const resetUser = (token) =>{
         localStorage.setItem("token", user.jwt)
         dispatch(resetUserOnRefresh(user.user))
       })
+  }
+}
+
+export const login =(user)=>{
+  let userInfo = JSON.stringify({user:{username: user.username, password: user.password}})
+  return function thunk(dispatch) {
+    return fetch("http://localhost:3002/login",{method:"POST",
+    headers: {
+      "Content-Type":"application/json",
+      Accepts: "application/json"
+    },
+    body: userInfo
+    })
+    .then(res => res.json())
+    .then(user =>{
+        localStorage.setItem("token",user.jwt)
+        dispatch(loginUser(user.user))
+    })
+  }
+}
+
+export const logout = (user)=>{
+  let loggedOut = {}
+  return function thunk(dispatch) {
+    localStorage.removeItem("token")
+    dispatch(logoutUser(loggedOut))
   }
 }

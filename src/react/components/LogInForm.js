@@ -1,6 +1,27 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {login} from '../../redux/thunk/usersThunk'
 
 class LogInForm extends Component {
+
+  state={
+    username: '',
+    password: ''
+  }
+
+  handleSubmit=(e)=>{
+    e.preventDefault()
+    this.props.login(this.state)
+    this.props.browserProps.history.push("/") 
+  }
+
+  handleChange=(e)=>{
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
+
+
 
   render() {
     return (
@@ -11,9 +32,9 @@ class LogInForm extends Component {
             <h1 className="text-center login-title">Sign Up To Continue</h1>
             <div className="account-wall">
                 <img className="profile-img" src="" alt=""/>
-                <form className="form-signin form-padding">
-                <input type="text" className="form-control form-padding" placeholder="Username" name="username" required autoFocus/>
-                <input type="password" className="form-control form-padding" placeholder="Password" required/>
+                <form className="form-signin form-padding" onSubmit={(e)=>{this.handleSubmit(e)}}>
+                <input type="text" className="form-control form-padding" placeholder="Username" name="username" onChange={this.handleChange} value={this.state.username} required autoFocus/>
+                <input type="password" className="form-control form-padding" placeholder="Password" name="password" onChange={this.handleChange} value={this.state.password} required/>
                 <button className="btn btn-lg btn-primary btn-block form-control" type="submit">
                     Create Account</button>
                 <label className="checkbox pull-left clearfix checkbox-padding">
@@ -31,4 +52,14 @@ class LogInForm extends Component {
   }
 }
 
-export default LogInForm;
+const mapDispatchToProps =(dispatch)=>{
+  return {
+    login: (e)=>dispatch(login(e))
+  }
+}
+
+const mapStateToProps = (state)=>{
+  return {user: state.user}
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(LogInForm);

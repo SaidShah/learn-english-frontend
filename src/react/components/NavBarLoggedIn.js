@@ -1,15 +1,19 @@
 import { Link, withRouter } from "react-router-dom";
+import {connect} from 'react-redux'
+import {logout} from '../../redux/thunk/usersThunk'
 
 import React, { Component } from 'react';
 
 class NavBarLoggedIn extends Component {
 
-  logout=()=>{
-    localStorage.removeItem("token")
-    this.props.browserProps.history.push("/")
+  logout=(e)=>{
+
+    this.props.logout()
+    this.props.browserProps.browserProps.history.push("/")
   }
 
   render() {
+    console.log(this.props);
     return (
       <>
       <li className="dropdown">
@@ -34,7 +38,7 @@ class NavBarLoggedIn extends Component {
       </li>
       <ul className="nav navbar-nav navbar-right">
       <li>
-        <Link to="/" onClick={this.logout}>
+        <Link to="/" onClick={(e)=>this.logout(e)}>
           <span className="glyphicon glyphicon-log-out" /> Log out
         </Link>
       </li>
@@ -47,4 +51,10 @@ class NavBarLoggedIn extends Component {
 
 }
 
-export default NavBarLoggedIn;
+const mapDispatchToProps =(dispatch)=>{
+  return {
+    logout: (e)=>dispatch(logout(e))
+  }
+}
+
+export default connect(null,mapDispatchToProps)(NavBarLoggedIn);
