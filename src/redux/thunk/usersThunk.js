@@ -15,6 +15,7 @@ export const createUser = (user) =>{
         localStorage.setItem("token", user.jwt)
         dispatch(signUp(user.user))
      })
+     .catch(err => console.log(err))
   }
 }
 
@@ -29,6 +30,7 @@ export const resetUser = (token) =>{
         localStorage.setItem("token", user.jwt)
         dispatch(resetUserOnRefresh(user.user))
       })
+      .catch(err => console.log(err))
   }
 }
 
@@ -47,6 +49,7 @@ export const login =(user)=>{
         localStorage.setItem("token",user.jwt)
         dispatch(loginUser(user.user))
     })
+    .catch(err => alert("invalid username or password"))
   }
 }
 
@@ -70,5 +73,6 @@ export const editUser = (user) =>{
     .then(user => {
       dispatch(editUserProfile(user))
     })
+    .catch(err => console.log(err))
   }
 }

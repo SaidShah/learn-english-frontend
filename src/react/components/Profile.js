@@ -32,7 +32,6 @@ class Profile extends Component {
       <div>
       {this.props.user.id ?
 
-        <div className="center-div">
         <div className="container">
       <div className="row">
           <div className="col-sm-6 col-md-4 col-md-offset-4">
@@ -56,8 +55,6 @@ class Profile extends Component {
           </div>
       </div>
   </div>
-  </div>
-
 
         : <Redirect to="/"/>}
 

@@ -18,6 +18,28 @@ a.navbar-brand.text-color{
     color: white;
 }
 
+.watson-play{
+  height: 60px;
+  width: 60px;
+  fill: green;
+}
+
+.watson-play:active{
+  fill: blue;
+}
+
+
+.watson-mic{
+  height: 80px;
+  width: 80px;
+  fill: red;
+}
+
+.watson-mic:active{
+  fill:blue;
+}
+
+
 div.jumbotron.jumbotron-fluid{
     background: #e0f2f1;
 }
