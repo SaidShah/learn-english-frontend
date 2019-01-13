@@ -49,12 +49,25 @@ playVoice=()=>{
 
   render() {
     return (
-      <div>
-      <h2>{this.props.givenMessage ? this.props.givenMessage : ""}</h2>
+      <div className="container i-said-box">
+
+      <div class="col-xs-6 col-md-4">
       <Icon type="play" className="watson-play" onClick={(e)=>this.handleWords(e,this.props.givenMessage)}/>
-      <h2>ME: {this.state.text}</h2>
-      <h3>Bot: {this.state.response}</h3>
+      <h1>What I Said</h1>
+      <textarea  value={this.props.givenMessage} className="text-area" readOnly/>
       </div>
+      <div class="col-xs-6 col-md-4">
+
+      <h2> middle column</h2>
+      </div>
+
+      <div class="col-xs-6 col-md-4">
+      <h1>What ZaiN said</h1>
+      <textarea  value={this.props.response} className="text-area" readOnly/>
+      </div>
+
+      </div>
+
     );
   }
 

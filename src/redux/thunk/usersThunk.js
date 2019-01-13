@@ -27,8 +27,12 @@ export const resetUser = (token) =>{
             Authorization: `${token}`}
     }).then(res => res.json())
       .then(user =>{
-        localStorage.setItem("token", user.jwt)
-        dispatch(resetUserOnRefresh(user.user))
+        if(user.jwt){
+          localStorage.setItem("token", user.jwt)
+          dispatch(resetUserOnRefresh(user.user))
+        }else{
+        localStorage.removeItem("token")
+       }
       })
       .catch(err => console.log(err))
   }

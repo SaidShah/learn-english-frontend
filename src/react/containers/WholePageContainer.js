@@ -5,15 +5,13 @@ import SignUpForm from '../components/SignUpForm'
 import LogInForm from '../components/LogInForm'
 import Profile from '../components/Profile'
 import Home from '../components/Home'
-import Footer from '../components/Footer'
 import SpeechContainer from './SpeechContainer'
+import Level1 from './Level1'
 
 
 class WholePageContainer extends Component {
-  componentDidMount() {
-    console.log(process.env);
-    console.log(process.env.REACT_APP_DIALOGFLOW_SESSION_ID);
-  }
+
+
   render() {
 
     return (
@@ -24,12 +22,12 @@ class WholePageContainer extends Component {
         <div>
         <Switch>
          <Route path="/signup" render={()=><SignUpForm browserProps={this.props}/>}/>
-         <Route path="/speech" render={()=><SpeechContainer/>}/>
+         <Route path="/speech" render={()=><SpeechContainer browserProps={this.props}/>}/>
          <Route path="/login" render={()=><LogInForm browserProps={this.props}/>}/>
          <Route path="/profile" render={()=><Profile/>}/>
+         <Route path="/level1" render={()=><Level1 />}/>
          <Route  path="/" render={()=><Home/>}/>
         </Switch>
-        <Footer/>
         </div>
       </div>
     );

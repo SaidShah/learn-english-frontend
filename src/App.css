@@ -18,10 +18,34 @@ a.navbar-brand.text-color{
     color: white;
 }
 
-.watson-play{
-  height: 60px;
-  width: 60px;
-  fill: green;
+div.span9{
+  text-align: center;
+}
+
+.text-area{
+background: #e0f2f1;
+padding-top: 30px;
+text-align: center;
+height: 200px;
+width: 100%;
+border: none;
+}
+
+.i-said-box{
+  border: 3px solid #2196f3;
+  height: 600px;
+  padding: 20px;
+  font-size: 20px;
+  background: #e0f2f1;
+  text-align: center;
+}
+
+.zain-i-said-text{
+  color: #2196f3;
+}
+
+.isaid-box-margin{
+  margin: 50px
 }
 
 .watson-play:active{
@@ -29,14 +53,16 @@ a.navbar-brand.text-color{
 }
 
 
-.watson-mic{
+.watson-stop{
   height: 80px;
   width: 80px;
   fill: red;
 }
 
-.watson-mic:active{
-  fill:blue;
+.watson-mic{
+  height: 80px;
+  width: 80px;
+  fill: green;
 }
 
 

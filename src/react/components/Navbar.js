@@ -24,7 +24,7 @@ class Navbar extends Component {
               </li>
               </ul>
               <ul className="nav navbar-nav navbar-right padding-right-navbar">
-              {this.props.user.id ? <NavBarLoggedIn browserProps={this.props}/> : <NavBarLoggedOut />}
+              {this.props.user.id && this.props.user.id > 0 ? <NavBarLoggedIn browserProps={this.props}/> : <NavBarLoggedOut />}
             </ul>
           </div>
         </nav>

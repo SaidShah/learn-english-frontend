@@ -32,3 +32,10 @@ export const editUserProfile =(user)=>{
     payload: user
   }
 }
+
+export const invalidCredentials=(user)=>{
+  return {
+    type: "INVALID_CREDENTIALS",
+    payload: {}
+  }
+}

@@ -14,6 +14,8 @@ const userReducer = (state=initialState, action)=>{
           return{...state, user: action.payload}
     case "EDIT_USER":
           return{...state, user:action.payload}
+    case "INVALID_CREDENTIALS":
+          return{...state,user:action.payload}
     default:
     return state;
   }

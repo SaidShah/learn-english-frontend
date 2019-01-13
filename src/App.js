@@ -5,6 +5,7 @@ import './App.css';
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {resetUser} from './redux/thunk/usersThunk'
+import Footer from './react/components/Footer'
 
 
 class App extends Component {
@@ -19,6 +20,7 @@ class App extends Component {
       <div>
         {!this.props.user.id && localStorage.token ? this.resetUser() : null }
         <WholePageContainer/>
+        <Footer/>
       </div>
     );
   }

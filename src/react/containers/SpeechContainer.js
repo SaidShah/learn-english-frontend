@@ -1,6 +1,5 @@
 
-import GetSpeech from '../components/GetSpeech'
-import Speaker from '../components/Speaker'
+import PracticeSpeech from '../components/PracticeSpeech'
 
 import React, { Component } from 'react';
 
@@ -16,11 +15,11 @@ class SpeechContainer extends Component {
 
   render() {
     return (
-      <div className="center-div">
-      <GetSpeech givenMessage={this.state.givenMessage}/>
-      <Speaker handleMessage={this.handleMessage}/>
+    <div className="container">
 
-      </div>
+        <PracticeSpeech browserProps={this.props.browserProps}/>
+
+    </div>
     );
   }
 }

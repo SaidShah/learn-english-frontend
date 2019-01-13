@@ -3,10 +3,7 @@ import SpeechRecognition from 'react-speech-recognition'
 import {Icon} from 'watson-react-components/dist/components'
 
 const propTypes = {
-  //Props injected by SpeechRecognition
-  // transcript: PropTypes.string,
-  // resetTranscript: PropTypes.func,
-  // browserSupportsSpeechRecognition: PropTypes.bool
+
 }
 
 const options ={
@@ -20,7 +17,6 @@ class Speaker extends Component {
   handleTranscript=()=>{
     const {stopListening,transcript} = this.props
     this.props.handleMessage(transcript);
-    //resetTranscript()
     stopListening()
   }
 
@@ -36,7 +32,7 @@ class Speaker extends Component {
       <div>
       <Icon type="microphone" className="watson-mic" onClick={this.handleStart}/>
       <Icon type="stop" className="watson-mic" onClick={this.handleTranscript}/>
-        <h2>{this.props.transcript}</h2>
+        <h2>{this.props.transcript} </h2>
       </div>
     )
   }
