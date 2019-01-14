@@ -13,7 +13,7 @@ class WholePageContainer extends Component {
 
 
   render() {
-
+    
     return (
       <div>
       <div  className="app gray-background">

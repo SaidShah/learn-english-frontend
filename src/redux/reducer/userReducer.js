@@ -1,5 +1,6 @@
 const initialState = {
-  user: {}
+  user: {},
+  items: {}
 }
 
 const userReducer = (state=initialState, action)=>{
@@ -16,6 +17,8 @@ const userReducer = (state=initialState, action)=>{
           return{...state, user:action.payload}
     case "INVALID_CREDENTIALS":
           return{...state,user:action.payload}
+    case "GET_ITEMS":
+          return{...state,items:action.payload}
     default:
     return state;
   }
