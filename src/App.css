@@ -22,6 +22,39 @@ div.span9{
   text-align: center;
 }
 
+.special-blue-text{
+  color: black;
+  font-weight: bold;
+}
+
+.card-width-vocab{
+  width: 250px;
+}
+
+.a{
+  width:350px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.image-padding{
+  padding: 20px
+}
+
+.flex-container > div {
+  border: 2px solid #2196f3;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+
 .text-area{
 background: #e0f2f1;
 padding-top: 30px;
@@ -29,6 +62,10 @@ text-align: center;
 height: 200px;
 width: 100%;
 border: none;
+}
+
+.text-align-center{
+  text-align: center;
 }
 
 .i-said-box{
