@@ -21,12 +21,12 @@ class WholePageContainer extends Component {
       </div>
         <div>
         <Switch>
-         <Route path="/signup" render={()=><SignUpForm browserProps={this.props}/>}/>
-         <Route path="/speech" render={()=><SpeechContainer browserProps={this.props}/>}/>
-         <Route path="/login" render={()=><LogInForm browserProps={this.props}/>}/>
-         <Route path="/profile" render={()=><Profile/>}/>
-         <Route path="/level1" render={()=><Level1 />}/>
-         <Route  path="/" render={()=><Home/>}/>
+         <Route  path="/signup" render={()=><SignUpForm browserProps={this.props}/>}/>
+         <Route  path="/speech" render={()=><SpeechContainer browserProps={this.props}/>}/>
+         <Route  path="/login" render={()=><LogInForm browserProps={this.props}/>}/>
+         <Route  path="/profile" render={()=><Profile/>}/>
+         <Route  path="/level1" render={()=><Level1 browserProps={this.props}/>}/>
+         <Route exact path="/" render={()=><Home/>}/>
         </Switch>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import {Link, Route} from 'react-router-dom'
+import {Link, Route, Switch,withRouter} from 'react-router-dom'
 import VocabularyCard from '../components/VocabularyCard'
+import Level1Category from '../components/Level1Category'
 import fruits from "../../images/fruit.jpg"
 import vegetables from "../../images/vegetable2.jpg"
 import clothes from "../../images/clothes.jpg"
@@ -22,7 +23,8 @@ class Level1 extends Component {
 
   render() {
 
-    return (
+let level1=
+  <>
       <div >
       <div className="text-align-center">
         <h1 className="special-blue-text">Practice Vocabulary</h1>
@@ -56,10 +58,19 @@ class Level1 extends Component {
               </div>
             </div>
       </div>
+  </>
 
-    );
+
+    return (
+      <>
+      <Switch>
+        <Route exact path="/level1/:category" render={props => <Level1Category props={props.match.params.category}/>}/>
+        <Route exact path="/level1/" render={()=><div>{level1}</div>}/>
+      </Switch>
+      </>
+    )
   }
 
 }
 
-export default Level1;
+export default withRouter(Level1)
