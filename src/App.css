@@ -22,6 +22,11 @@ div.span9{
   text-align: center;
 }
 
+.is-correct-checkmark{
+  height: 70px;
+  width: 40px;
+}
+
 .special-blue-text{
   color: black;
   font-weight: bold;

@@ -14,13 +14,12 @@ class Level1Category extends Component {
   }
 
   componentDidMount() {
-
     this.props.getItems( this.props.type)
   }
 
   getAllItems=()=>{
     let allItems = this.props.items.map(eachItem =>{
-      return <div className="div-margin-bottom" key={eachItem.id}> <ItemCard handleChange={this.handleChange} item={eachItem} key={eachItem.id}/> </div>
+      return <div className="div-margin-bottom" key={eachItem.id}> <ItemCard handleChange={this.handleChange} item={eachItem} key={eachItem.id} currentMessage={this.state.currentMessage}/> </div>
     })
     return allItems
   }

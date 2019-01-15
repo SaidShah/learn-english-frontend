@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Icon} from 'watson-react-components/dist/components'
 import {connect} from 'react-redux'
 import SpeechRecognition from 'react-speech-recognition'
-
+import ReactLoading from 'react-loading'
 
 const propTypes = {
 
@@ -31,7 +31,7 @@ componentDidMount() {
   window.speechSynthesis.speak(msg);
 }else{
   this.props.browserProps.history.push("/")
-}
+  }
 }
 
 handleMessage=(data)=>{
@@ -98,6 +98,7 @@ playVoice=()=>{
       <div className="col-xs-6 col-md-4">
 
       <h1 className="zain-i-said-text">What I Said</h1>
+      {this.state.userSpeaking ? <ReactLoading type={"bars"} color={"#2196f3"} height={60} width={60}/> : ''}
       <h3>{this.props.transcript}</h3>
       </div>
       <div className="col-xs-6 col-md-4">
@@ -108,6 +109,7 @@ playVoice=()=>{
       <div className="col-xs-6 col-md-4">
       <div>
         <h1 className="zain-i-said-text">What ZaiN Said</h1>
+      <h1 >{!this.state.userSpeaking ? <ReactLoading type={"bars"} color={"#2196f3"} height={60} width={60}/> : ''}</h1>
         <h3>{this.state.response} </h3>
       </div>
       </div>

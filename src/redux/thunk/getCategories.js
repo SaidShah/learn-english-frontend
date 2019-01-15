@@ -6,9 +6,12 @@ export const getItems =(category)=>{
     .then(res=>res.json())
     .then(items =>{
       let selectedItems = items.words.filter(a=>{
-        return a.category === category
+            return a.category === category
       })
-      dispatch(getItemsFromCategory(selectedItems))
+      let finalResults = selectedItems.map(eachItem=>{
+          return {...eachItem,isCorrect: false}
+      })
+      dispatch(getItemsFromCategory(finalResults))
     })
   }
 }

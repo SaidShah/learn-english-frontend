@@ -3,6 +3,7 @@ import {Icon} from 'watson-react-components/dist/components'
 import {connect} from 'react-redux'
 import {selectItem, unSelectItem} from '../../redux/action/categories'
 import SpeechRecognition from 'react-speech-recognition'
+import ReactLoading from 'react-loading'
 
 const propTypes = {
 
@@ -31,7 +32,7 @@ class ItemCard extends Component {
 
   selectItem=(e,item)=>{
     this.props.selectedItem(item)
-    const {resetTranscript,startListening,transcript} = this.props
+    const {resetTranscript,startListening} = this.props
     resetTranscript()
     startListening()
   }
@@ -41,18 +42,40 @@ class ItemCard extends Component {
     const {stopListening,transcript} = this.props
     this.handleMessage(transcript);
     stopListening()
-    console.log(e.target);
+  }
+
+  handleChange=(message)=>{
+
+    this.props.handleChange(message)
+  }
+
+  isCorrect=(item,message)=>{
+    const {stopListening} = this.props
+    if(message.includes(item.name)){
+      this.unSelect(item)
+      item.isCorrect=true
+      this.isItCorrect(item)
+    }else{
+
+      return <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40}/>
+    }
+
+  }
+
+  isItCorrect=(item)=>{
+    return <Icon type="success" className="is-correct-checkmark"/>
   }
 
 
   render() {
-    console.log(this.props.item, this.props.isSelected);
     return (
       <div className="item-card">
         <h2>{this.props.item.name.toUpperCase()}</h2>
         <img src={this.props.item.image_url} alt=""/>
-        <h2 className="textHere">Your guess: {!this.props.isSelected ? "": this.props.transcript }</h2>
-        <h2 onChange={this.props.handleChange(this.props.transcript)}>{this.props.givenMessage}</h2>
+        <h2 className="textHere">Your guess: {!this.props.isSelected ? "": this.props.transcript.split(" ")[this.props.transcript.split(" ").length-1]}</h2>
+        <h2 onChange={this.handleChange(this.props.transcript)}>{this.props.givenMessage}</h2>
+        {this.props.isSelected ? this.isCorrect(this.props.item,this.props.transcript) : ''}
+        {this.props.item.isCorrect ? this.isItCorrect() : ''}
         {this.props.isSelected ?
           <Icon type="stop" className="watson-mic" onClick={(e)=>this.unSelect(e,this.props.item)}/>
            :
@@ -67,7 +90,7 @@ class ItemCard extends Component {
 ItemCard.propTypes = propTypes
 
 const mapStateToProps=(state,ownProps)=>{
-  return{isSelected: state.selected.id === ownProps.item.id}
+  return{isSelected: state.selected.id === ownProps.item.id, user: state.user}
 }
 
 const mapDispatchToProps=(dispatch)=>{
