@@ -19,7 +19,7 @@ class App extends Component {
     return (
       <div>
         {!this.props.user.id && localStorage.token ? this.resetUser() : null }
-        <WholePageContainer/>
+        <WholePageContainer />
         <Footer/>
       </div>
     );

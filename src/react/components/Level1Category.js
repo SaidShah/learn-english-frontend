@@ -14,6 +14,10 @@ class Level1Category extends Component {
   }
 
   componentDidMount() {
+    let message = `You have selected,${this.props.type}. Please, click on each micro-phone, and say OR spell the item's name, and Your instructor Zain, will check your answer as you speak. If you say the word incorrectly, its ok,
+                   keep trying. GOOD LUCK`
+    let msg = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(msg);
     this.props.getItems( this.props.type)
   }
 

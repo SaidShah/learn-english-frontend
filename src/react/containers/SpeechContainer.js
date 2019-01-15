@@ -1,6 +1,5 @@
 
 import PracticeSpeech from '../components/PracticeSpeech'
-
 import React, { Component } from 'react';
 
 class SpeechContainer extends Component {
@@ -14,6 +13,7 @@ class SpeechContainer extends Component {
 
 
   render() {
+
     return (
     <div className="container">
 

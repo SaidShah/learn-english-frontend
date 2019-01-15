@@ -17,6 +17,8 @@ const options ={
 
 class ItemCard extends Component {
 
+
+
   state={
     text: '',
     response: '',
@@ -50,7 +52,6 @@ class ItemCard extends Component {
   }
 
   isCorrect=(item,message)=>{
-    const {stopListening} = this.props
     if(message.includes(item.name)){
       this.unSelect(item)
       item.isCorrect=true

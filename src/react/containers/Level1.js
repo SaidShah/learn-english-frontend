@@ -13,9 +13,15 @@ import {connect} from 'react-redux'
 
 class Level1 extends Component {
 
+  componentDidMount() {
+    let message = `Welcome to level One, Please Select a CATEGORY`
+    let msg = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(msg);
+  }
 
 
   render() {
+
 let level1=
   <>
       <div >

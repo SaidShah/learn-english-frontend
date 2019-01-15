@@ -13,7 +13,7 @@ class WholePageContainer extends Component {
 
 
   render() {
-    
+
     return (
       <div>
       <div  className="app gray-background">
@@ -25,7 +25,7 @@ class WholePageContainer extends Component {
          <Route  path="/speech" render={()=><SpeechContainer browserProps={this.props}/>}/>
          <Route  path="/login" render={()=><LogInForm browserProps={this.props}/>}/>
          <Route  path="/profile" render={()=><Profile/>}/>
-         <Route  path="/level1" render={()=><Level1 browserProps={this.props}/>}/>
+         <Route  path="/level1" render={()=><Level1 browserProps={this.props} />}/>
          <Route exact path="/" render={()=><Home/>}/>
         </Switch>
         </div>
