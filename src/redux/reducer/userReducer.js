@@ -1,6 +1,7 @@
 const initialState = {
   user: {},
-  items: {}
+  items: {},
+  selected: {}
 }
 
 const userReducer = (state=initialState, action)=>{
@@ -19,6 +20,10 @@ const userReducer = (state=initialState, action)=>{
           return{...state,user:action.payload}
     case "GET_ITEMS":
           return{...state,items:action.payload}
+    case "SELECT_ITEM":
+          return {...state,selected: action.payload}
+    case "UNSELECT_ITEM":
+          return {...state, selected: action.payload}
     default:
     return state;
   }

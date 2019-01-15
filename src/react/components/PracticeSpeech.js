@@ -25,8 +25,8 @@ class PracticeSpeech extends Component {
 
 componentDidMount() {
   if(this.props.user.id){
-  let message = `Welcome ${this.props.user.first_name}, I am Zain your english instructor. Lets have a conversation.
-                  Say Hello, or Hi, or Hey, to begin our conversation.`
+  let message = `Welcome ${this.props.user.first_name}, I am Zain your, english instructor. Lets have a conversation.
+                  I will make believe, I don't ,know you, Say Hello, or Hi, or Hey, to begin our conversation.`
   let msg = new SpeechSynthesisUtterance(message);
   window.speechSynthesis.speak(msg);
 }else{

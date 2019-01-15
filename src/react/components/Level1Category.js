@@ -5,6 +5,13 @@ import {connect} from 'react-redux'
 import {getItems} from '../../redux/thunk/getCategories'
 
 class Level1Category extends Component {
+  state={
+    currentMessage: ''
+  }
+
+  handleChange=(data)=>{
+    this.setState({currentMessage: data})
+  }
 
   componentDidMount() {
     this.props.getItems(this.props.type)
@@ -12,7 +19,7 @@ class Level1Category extends Component {
 
   getAllItems=()=>{
     let allItems = this.props.items.map(eachItem =>{
-      return <div className="div-margin-bottom" key={eachItem.name}> <ItemCard item={eachItem} key={eachItem.id}/> </div>
+      return <div className="div-margin-bottom" key={eachItem.id}> <ItemCard handleChange={this.handleChange} item={eachItem} key={eachItem.id}/> </div>
     })
     return allItems
   }
