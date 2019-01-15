@@ -13,14 +13,6 @@ import {connect} from 'react-redux'
 
 class Level1 extends Component {
 
-  // componentDidMount() {
-  //   if(this.props.user.id){
-  //     console.log(this.props.user.id, "USER ID");
-  //   }else{
-  //     this.props.browserProps.history.push("/")
-  //
-  //   }
-  // }
 
 
   render() {

@@ -14,7 +14,8 @@ class Level1Category extends Component {
   }
 
   componentDidMount() {
-    this.props.getItems(this.props.type)
+
+    this.props.getItems( this.props.type)
   }
 
   getAllItems=()=>{
