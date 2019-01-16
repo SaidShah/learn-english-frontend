@@ -18,3 +18,10 @@ export const unSelectItem =(item)=>{
     payload: {}
   }
 }
+
+export const getSpeechParts=(item)=>{
+  return {
+    type: "GET_SPEECH_PART",
+    payload: item
+  }
+}

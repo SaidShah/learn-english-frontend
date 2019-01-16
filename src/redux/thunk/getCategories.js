@@ -1,5 +1,7 @@
 import { getItemsFromCategory} from '../action/categories'
 
+
+
 export const getItems =(category)=>{
   return function thunk(dispatch){
     fetch(`http://localhost:3002/vocabularies`)
@@ -13,5 +15,13 @@ export const getItems =(category)=>{
       })
       dispatch(getItemsFromCategory(finalResults))
     })
+  }
+}
+
+
+export const getPartsOfSpeech=(category)=>{
+  return function thunk(dispatch) {
+
+
   }
 }
