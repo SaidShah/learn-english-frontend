@@ -7,6 +7,7 @@ import Profile from '../components/Profile'
 import Home from '../components/Home'
 import SpeechContainer from './SpeechContainer'
 import Level1 from './Level1'
+import Level2 from './Level2'
 
 
 class WholePageContainer extends Component {
@@ -26,6 +27,7 @@ class WholePageContainer extends Component {
          <Route  path="/login" render={()=><LogInForm browserProps={this.props}/>}/>
          <Route  path="/profile" render={()=><Profile/>}/>
          <Route  path="/level1" render={()=><Level1 browserProps={this.props} />}/>
+         <Route  path="/level2" render={()=><Level2 browserProps={this.props} />}/>
          <Route exact path="/" render={()=><Home/>}/>
         </Switch>
         </div>
