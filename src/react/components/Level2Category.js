@@ -16,6 +16,10 @@ class Level2Category extends Component {
 
   componentDidMount() {
     this.props.getPartsOfSpeech(this.props.type)
+    let message = `You have selected,${this.props.type}. Please, click on each micro-phone, and say the full sentence. Your instructor Zain, will check your answer as you speak. If you say the sentence incorrectly, or make a mistake, its ok, just
+    click the stop button and restart. GOOD LUCK`
+    let msg = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(msg);
   }
 
   getCards=()=>{
