@@ -22,6 +22,10 @@ div.span9{
   text-align: center;
 }
 
+.h2-text{
+  font-size: 19px;
+}
+
 .is-correct-checkmark{
   height: 70px;
   width: 40px;
@@ -93,6 +97,36 @@ border: none;
   font-size: 20px;
   background: #e0f2f1;
   text-align: center;
+}
+.parts-box{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.parts-box > div{
+
+  border: 2px solid #2196f3;
+  padding: 20px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  line-height: 75px;
+  font-size: 20px;
+}
+
+.control-width{
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blue-text{
+  color: #2196f3;
+}
+
+.div-margin-top{
+  margin-top: 20px
 }
 
 .zain-i-said-text{

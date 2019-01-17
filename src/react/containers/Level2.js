@@ -14,6 +14,12 @@ import interjectionImage from '../../images/interjection.jpg'
 
 class Level2 extends Component {
 
+  componentDidMount() {
+    let message = `Welcome to level two, Please Select a Part of Speech`
+    let msg = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(msg);
+  }
+
   pronounDefinition(){
     return "Pronouns are words like I, it, which, who, that, his and herself. They are used in place of a noun or a noun phrase. To avoid repetition, we use a pronoun for the second and subsequent mentions of the same person or thing."
   }
@@ -63,7 +69,7 @@ class Level2 extends Component {
                 <Link to="/level2/noun"><Sentence kind='noun'  definition={this.nounDefinition()} image_url={nounImage}/></Link>
                 </div>
                 <div >
-                <Link to="/level2/adjective"><Sentence kind='adjective' definition={this.adjectiveDefinition()}  image_url={adjectiveImage}/></Link>
+                <Link to="/level2/adjectives"><Sentence kind='adjectives' definition={this.adjectiveDefinition()}  image_url={adjectiveImage}/></Link>
                 </div>
                 <div>
                 <Link to="/level2/verb"><Sentence kind='verb' definition={this.verbDefinition()} image_url={verbImage} /></Link>
@@ -106,7 +112,6 @@ class Level2 extends Component {
           </>
           )
   }
-
 }
 
 export default withRouter(Level2);

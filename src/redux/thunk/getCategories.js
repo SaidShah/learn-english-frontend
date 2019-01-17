@@ -1,4 +1,4 @@
-import { getItemsFromCategory} from '../action/categories'
+import { getItemsFromCategory, getSpeechParts} from '../action/categories'
 
 
 
@@ -21,7 +21,14 @@ export const getItems =(category)=>{
 
 export const getPartsOfSpeech=(category)=>{
   return function thunk(dispatch) {
-
+    fetch(`http://localhost:3002/part_of_speeches`)
+    .then(res => res.json())
+    .then(eachItem =>{
+      let arr = eachItem.parts_of_speech.filter(e =>{
+        return e.category === category
+      })
+      dispatch(getSpeechParts(arr))
+    })
 
   }
 }
