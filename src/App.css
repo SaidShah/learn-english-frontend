@@ -125,6 +125,12 @@ border: none;
   color: #2196f3;
 }
 
+.black-text{
+  color: black;
+  font-size: 30px;
+}
+
+
 .div-margin-top{
   margin-top: 20px
 }
