@@ -49,9 +49,12 @@ class PartOfSpeechCard extends Component {
 
 
   isCorrect=(item,message)=>{
-    console.log("message", message);
-    if(message.includes(item.name)){
-      this.unSelect(item)
+    let regex =  /[?.,'!` \s]+/g;
+
+    let userSaying= message.replace(regex, '').trim().toLowerCase()
+    let solution = item.solutions.replace(regex,'').trim().toLowerCase()
+    if(userSaying.includes(solution)){
+      this.unSelectSentence(item)
       item.isCorrect=true
       this.isItCorrect(item)
     }else{
@@ -94,8 +97,6 @@ class PartOfSpeechCard extends Component {
 PartOfSpeechCard.propTypes = propTypes
 
 const mapStateToProps=(state,ownProps)=>{
-  console.log(state.sentence.id,"STATE  ");
-    console.log(ownProps.item.id,"OWN PROPS  ");
   return{isSelected: state.sentence.id === ownProps.item.id, user: state.user}
 }
 

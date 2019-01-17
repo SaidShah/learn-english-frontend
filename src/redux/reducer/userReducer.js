@@ -3,7 +3,8 @@ const initialState = {
   items: {},
   selected: {},
   parts_of_speech: {},
-  sentence: {}
+  sentence: {},
+  givenSentence: ''
 }
 
 const userReducer = (state=initialState, action)=>{
@@ -32,6 +33,10 @@ const userReducer = (state=initialState, action)=>{
           return{...state, sentence: action.payload}
     case "UNSELECT_SENTENCE":
           return{...state,sentence: action.payload}
+    case "RETURN_SENTENCE":
+          return {...state, givenSentence: action.payload}
+    case 'RESET_SENTENCE':
+          return{...state,givenSentence: action.payload}
     default:
     return state;
   }

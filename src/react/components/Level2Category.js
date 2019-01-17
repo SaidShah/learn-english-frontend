@@ -29,7 +29,6 @@ class Level2Category extends Component {
 
 
   render() {
-    console.log(this.props);
     return (
       <div className="text-align-center">
         <h1>{this.props.type.toUpperCase()}</h1>

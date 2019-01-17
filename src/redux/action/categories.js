@@ -39,3 +39,19 @@ export const unSelectSentence =(item)=>{
     payload: {}
   }
 }
+
+export const handleSentence=(sentence)=>{
+  console.log(sentence, "HANDLE SENTENCE IN CATEGOREIS");
+  return {
+    type: "RETURN_SENTENCE",
+    payload: sentence
+  }
+}
+
+export const resetSentence =(sentence)=>{
+    console.log(sentence, "reset SENTENCE IN CATEGOREIS");
+  return {
+    type: 'RESET_SENTENCE',
+    payload: ""
+  }
+}
