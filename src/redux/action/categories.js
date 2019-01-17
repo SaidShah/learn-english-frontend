@@ -25,3 +25,17 @@ export const getSpeechParts=(item)=>{
     payload: item
   }
 }
+
+export const selectSentence = (item)=>{
+  return {
+    type: "SELECT_SENTENCE",
+    payload: item
+  }
+}
+
+export const unSelectSentence =(item)=>{
+  return{
+    type: "UNSELECT_SENTENCE",
+    payload: {}
+  }
+}

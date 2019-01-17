@@ -7,7 +7,11 @@ import {getPartsOfSpeech} from '../../redux/thunk/getCategories'
 class Level2Category extends Component {
 
   state={
-    isSelected: false
+    currentMessage: ''
+  }
+
+  handleChange=(data)=>{
+    this.setState({currentMessage: data})
   }
 
   componentDidMount() {
@@ -16,7 +20,7 @@ class Level2Category extends Component {
 
   getCards=()=>{
     let arr=this.props.parts_of_speech.map(eachItem=>{
-      return <div className="div-margin-bottom div-margin-top" key={eachItem.id}><PartOfSpeechCard item={eachItem} key={eachItem.solution} />
+      return <div className="div-margin-bottom div-margin-top" key={eachItem.id}><PartOfSpeechCard item={eachItem} key={eachItem.solution} handleChange={this.handleChange} currentMessage={this.state.currentMessage}/>
       </div>
     })
     return arr

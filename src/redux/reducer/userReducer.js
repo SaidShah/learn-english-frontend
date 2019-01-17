@@ -2,7 +2,8 @@ const initialState = {
   user: {},
   items: {},
   selected: {},
-  parts_of_speech: {}
+  parts_of_speech: {},
+  sentence: {}
 }
 
 const userReducer = (state=initialState, action)=>{
@@ -27,6 +28,10 @@ const userReducer = (state=initialState, action)=>{
           return {...state, selected: action.payload}
     case "GET_SPEECH_PART":
           return{...state, parts_of_speech: action.payload}
+    case "SELECT_SENTENCE":
+          return{...state, sentence: action.payload}
+    case "UNSELECT_SENTENCE":
+          return{...state,sentence: action.payload}
     default:
     return state;
   }

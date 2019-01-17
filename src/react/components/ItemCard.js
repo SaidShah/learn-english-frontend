@@ -25,7 +25,6 @@ class ItemCard extends Component {
     prevQuestion: '',
     spokenRes: '',
     givenMessage: ''
-
   }
 
   handleMessage=(data)=>{
@@ -47,7 +46,6 @@ class ItemCard extends Component {
   }
 
   handleChange=(message)=>{
-
     this.props.handleChange(message)
   }
 
@@ -91,6 +89,8 @@ class ItemCard extends Component {
 ItemCard.propTypes = propTypes
 
 const mapStateToProps=(state,ownProps)=>{
+  console.log(state.selected.id,"STATE  ");
+    console.log(ownProps.item.id,"OWN PROPS  ");
   return{isSelected: state.selected.id === ownProps.item.id, user: state.user}
 }
 
