@@ -21,13 +21,13 @@ class Level3 extends Component {
             </div>
               <div className="flex-container">
                 <div>
-                <Link to="/level3/easy"><Unscramble image_url={easyWords} type={"easyWords"} title={"easy Words"}/></Link>
+                <Link to="/level3/easy"><Unscramble image_url={easyWords} type={"easyWord"} title={"easy Words"}/></Link>
                 </div>
                 <div>
-                <Link to="/level3/medium"><Unscramble image_url={mediumWords} type={"mediumWords"} title={"medium Words"}/></Link>
+                <Link to="/level3/medium"><Unscramble image_url={mediumWords} type={"mediumWord"} title={"medium Words"}/></Link>
                 </div>
                 <div >
-                <Link to="/level3/hard"><Unscramble  image_url={hardWords} type={"hardWords"} title={"hard Words"}/></Link>
+                <Link to="/level3/hard"><Unscramble  image_url={hardWords} type={"hardWord"} title={"hard Words"}/></Link>
                 </div>
               </div>
               <div className="text-align-center">
@@ -35,13 +35,13 @@ class Level3 extends Component {
                </div>
                  <div className="flex-container">
                    <div>
-                   <Link to="/level3/easy"><Unscramble image_url={easy} type={"easy"} title={"easy sentences"}/></Link>
+                   <Link to="/level3/easy"><Unscramble image_url={easy} type={"easySentence"} title={"easy sentences"}/></Link>
                    </div>
                    <div>
-                   <Link to="/level3/medium"><Unscramble image_url={medium} type={"medium"} title={"medium sentences"}/></Link>
+                   <Link to="/level3/medium"><Unscramble image_url={medium} type={"mediumSentence"} title={"medium sentences"}/></Link>
                    </div>
                    <div >
-                   <Link to="/level3/hard"><Unscramble  image_url={hard} type={"hard"} title={"hard sentences"}/></Link>
+                   <Link to="/level3/hard"><Unscramble  image_url={hard} type={"hardSentence"} title={"hard sentences"}/></Link>
                    </div>
                  </div>
             </div>
