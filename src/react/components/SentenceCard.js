@@ -1,16 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class SentenceCard extends Component {
-
   render() {
-    return (
-      <div>
-      
-
-      </div>
-    );
+    return <div />;
   }
-
 }
 
 export default SentenceCard;
