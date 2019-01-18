@@ -4,53 +4,51 @@ const initialState = {
   selected: {},
   parts_of_speech: {},
   sentence: {},
-  givenSentence: '',
-  scrambledContent:{},
+  givenSentence: "",
+  scrambledContent: {},
   selectScrambled: {}
-}
+};
 
-const userReducer = (state=initialState, action)=>{
+const userReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'GET_USER':
-         return{...state,user:action.payload}
-    case 'SIGN_UP':
-         return{...state,user:action.payload}
-    case 'LOGIN':
-          return {...state, user: action.payload}
-    case 'LOGOUT':
-          return{...state, user: action.payload}
+    case "GET_USER":
+      return { ...state, user: action.payload };
+    case "SIGN_UP":
+      return { ...state, user: action.payload };
+    case "LOGIN":
+      return { ...state, user: action.payload };
+    case "LOGOUT":
+      return { ...state, user: action.payload };
     case "EDIT_USER":
-          return{...state, user:action.payload}
+      return { ...state, user: action.payload };
     case "INVALID_CREDENTIALS":
-          return{...state,user:action.payload}
+      return { ...state, user: action.payload };
     case "GET_ITEMS":
-          return{...state,items:action.payload}
+      return { ...state, items: action.payload };
     case "SELECT_ITEM":
-          return {...state,selected: action.payload}
+      return { ...state, selected: action.payload };
     case "UNSELECT_ITEM":
-          return {...state, selected: action.payload}
+      return { ...state, selected: action.payload };
     case "GET_SPEECH_PART":
-          return{...state, parts_of_speech: action.payload}
+      return { ...state, parts_of_speech: action.payload };
     case "SELECT_SENTENCE":
-          return{...state, sentence: action.payload}
+      return { ...state, sentence: action.payload };
     case "UNSELECT_SENTENCE":
-          return{...state,sentence: action.payload}
+      return { ...state, sentence: action.payload };
     case "RETURN_SENTENCE":
-          return {...state, givenSentence: action.payload}
-    case 'RESET_SENTENCE':
-          return{...state,givenSentence: action.payload}
+      return { ...state, givenSentence: action.payload };
+    case "RESET_SENTENCE":
+      return { ...state, givenSentence: action.payload };
     case "GET_SCRAMBLED":
-          return{...state,scrambledContent: action.payload}
+      return { ...state, scrambledContent: action.payload };
     case "SELECT_SCRAMBLED":
-          return{...state,selectScrambled: action.payload}
+      return { ...state, selectScrambled: action.payload };
     case "UNSELECT_SCRAMBLED":
-          return {...state, selectScrambled: action.payload}
+      return { ...state, selectScrambled: action.payload };
 
     default:
-    return state;
+      return state;
   }
+};
 
-
-}
-
-export default userReducer
+export default userReducer;
