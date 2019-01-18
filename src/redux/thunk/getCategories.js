@@ -1,4 +1,4 @@
-import { getItemsFromCategory, getSpeechParts} from '../action/categories'
+import { getItemsFromCategory, getSpeechParts, getScrambledContent} from '../action/categories'
 
 
 
@@ -30,5 +30,18 @@ export const getPartsOfSpeech=(category)=>{
       dispatch(getSpeechParts(arr))
     })
 
+  }
+}
+
+export const getScrambled =(content)=>{
+  return function thunk(dispatch){
+    fetch(`http://localhost:3002/scrambles`)
+    .then(res => res.json())
+    .then(scrambled=>{
+      let arr = scrambled.filter(eachScramble=>{
+        return eachScramble.category === content
+      })
+      dispatch(getScrambledContent(arr))
+    })
   }
 }

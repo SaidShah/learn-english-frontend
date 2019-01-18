@@ -106,7 +106,7 @@ class Level2 extends Component {
             </>
             :
             <>
-            <Redirect to=""/>
+            <Redirect to="/"/>
             </>
           }
           </>

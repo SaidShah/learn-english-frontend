@@ -21,13 +21,13 @@ class Level3 extends Component {
             </div>
               <div className="flex-container">
                 <div>
-                <Link to="/level3/easy"><Unscramble image_url={easyWords} type={"easyWord"} title={"easy Words"}/></Link>
+                <Link to="/level3/easyWord"><Unscramble image_url={easyWords} type={"easyWord"} title={"easy Words"}/></Link>
                 </div>
                 <div>
-                <Link to="/level3/medium"><Unscramble image_url={mediumWords} type={"mediumWord"} title={"medium Words"}/></Link>
+                <Link to="/level3/mediumWord"><Unscramble image_url={mediumWords} type={"mediumWord"} title={"medium Words"}/></Link>
                 </div>
                 <div >
-                <Link to="/level3/hard"><Unscramble  image_url={hardWords} type={"hardWord"} title={"hard Words"}/></Link>
+                <Link to="/level3/hardWord"><Unscramble  image_url={hardWords} type={"hardWord"} title={"hard Words"}/></Link>
                 </div>
               </div>
               <div className="text-align-center">
@@ -35,13 +35,13 @@ class Level3 extends Component {
                </div>
                  <div className="flex-container">
                    <div>
-                   <Link to="/level3/easy"><Unscramble image_url={easy} type={"easySentence"} title={"easy sentences"}/></Link>
+                   <Link to="/level3/easySentence"><Unscramble image_url={easy} type={"easySentence"} title={"easy sentences"}/></Link>
                    </div>
                    <div>
-                   <Link to="/level3/medium"><Unscramble image_url={medium} type={"mediumSentence"} title={"medium sentences"}/></Link>
+                   <Link to="/level3/mediumSentence"><Unscramble image_url={medium} type={"mediumSentence"} title={"medium sentences"}/></Link>
                    </div>
                    <div >
-                   <Link to="/level3/hard"><Unscramble  image_url={hard} type={"hardSentence"} title={"hard sentences"}/></Link>
+                   <Link to="/level3/hardSentence"><Unscramble  image_url={hard} type={"hardSentence"} title={"hard sentences"}/></Link>
                    </div>
                  </div>
             </div>
@@ -52,7 +52,7 @@ class Level3 extends Component {
             {localStorage.token ?
               <>
             <Switch>
-              <Route exact path="/level3/:type" render={props => <Level3Category />}/>
+              <Route exact path="/level3/:type" render={props => <Level3Category type={props.match.params.type}/>}/>
               <Route exact path="/level3" render={()=><div>{level3}</div>}/>
             </Switch>
             </>

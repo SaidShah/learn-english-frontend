@@ -55,3 +55,10 @@ export const resetSentence =(sentence)=>{
     payload: ""
   }
 }
+
+export const getScrambledContent = (content)=>{
+  return {
+    type: "GET_SCRAMBLED",
+    payload: content
+  }
+}
