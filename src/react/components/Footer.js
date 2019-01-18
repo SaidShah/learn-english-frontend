@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom'
-import logo from '../../images/logo.png'
+import { Link } from "react-router-dom";
+import logo from "../../images/logo.png";
 
 class Footer extends Component {
   render() {
@@ -8,7 +8,7 @@ class Footer extends Component {
       <footer className="footer-bs">
         <div className="row">
           <div className="col-md-3 footer-brand animated fadeInLeft">
-            <img src={logo} className="footer-image" alt=""/>
+            <img src={logo} className="footer-image" alt="" />
             <p>
               Learn to speak english with our ai instructor. Practice exercises
               for kids and adults.
@@ -75,7 +75,10 @@ class Footer extends Component {
           </div>
           <div className="col-md-3 footer-ns animated fadeInRight">
             <h4>Newsletter</h4>
-            <p>Robots are cool. Learning english is cool. Learning english from robots is the coolest</p>
+            <p>
+              Robots are cool. Learning english is cool. Learning english from
+              robots is the coolest
+            </p>
             <div>
               <div className="input-group">
                 <input

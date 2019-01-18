@@ -9,8 +9,7 @@ class Pronounciation extends Component {
   };
 
   componentDidMount() {
-    let message = `Welcome to pronounciation, Type a word or sentence in the input box, and click the play
-                    button, to listen to the correct pronounciation`;
+    let message = `Welcome to pronounciation, Type a word or sentence in the input box, and click on the slow translation or regular translation buttons, to listen to the correct pronounciation`;
     let msg = new SpeechSynthesisUtterance(message);
     window.speechSynthesis.speak(msg);
   }

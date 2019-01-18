@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import NavBarLoggedIn from "./NavBarLoggedIn";
 import NavBarLoggedOut from "./NavBarLoggedOut";
 import { Link } from "react-router-dom";
-import {connect} from 'react-redux'
-
+import { connect } from "react-redux";
 
 class Navbar extends Component {
   render() {
@@ -12,9 +11,9 @@ class Navbar extends Component {
         <nav className="navbar navbar-blue text-color">
           <div className="container-fluid ">
             <div className="navbar-header">
-            <a className="navbar-brand text-color" href="/">
-            ZaiN
-            </a>
+              <a className="navbar-brand text-color" href="/">
+                ZaiN
+              </a>
             </div>
             <ul className="nav navbar-nav">
               <li>
@@ -22,9 +21,13 @@ class Navbar extends Component {
                   <span className="glyphicon glyphicon-home" /> Home
                 </Link>
               </li>
-              </ul>
-              <ul className="nav navbar-nav navbar-right padding-right-navbar">
-              {this.props.user.id && this.props.user.id > 0 ? <NavBarLoggedIn browserProps={this.props}/> : <NavBarLoggedOut />}
+            </ul>
+            <ul className="nav navbar-nav navbar-right padding-right-navbar">
+              {this.props.user.id && this.props.user.id > 0 ? (
+                <NavBarLoggedIn browserProps={this.props} />
+              ) : (
+                <NavBarLoggedOut />
+              )}
             </ul>
           </div>
         </nav>
@@ -33,8 +36,8 @@ class Navbar extends Component {
   }
 }
 
-const mapStateToProps =(state)=>{
-  return{user: state.user}
-}
+const mapStateToProps = state => {
+  return { user: state.user };
+};
 
 export default connect(mapStateToProps)(Navbar);
