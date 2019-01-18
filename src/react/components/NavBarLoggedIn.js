@@ -31,6 +31,11 @@ class NavBarLoggedIn extends Component {
         </Link>
       </li>
       <li>
+        <Link to="/pronounciation">
+          <span className="glyphicon glyphicon-volume-down" />Pronounciation
+        </Link>
+      </li>
+      <li>
         <Link to="/profile">
           <span className="glyphicon glyphicon-pushpin" /> Profile
         </Link>
@@ -41,6 +46,7 @@ class NavBarLoggedIn extends Component {
           <span className="glyphicon glyphicon-log-out" /> Log out
         </Link>
       </li>
+
       </ul>
     </>
 

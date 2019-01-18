@@ -26,6 +26,27 @@ div.span9{
   font-size: 19px;
 }
 
+.pronounciation-input-margin{
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+
+.pronounciation-label-margin{
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.large-margin{
+  margin-top: 250px;
+  margin-bottom: 250px;
+}
+
+.guySpeaking{
+  height: 110px;
+  width: 110px;
+  margin: 100px;
+}
+
 .is-correct-checkmark{
   height: 70px;
   width: 40px;

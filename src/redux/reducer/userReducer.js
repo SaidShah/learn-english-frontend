@@ -5,7 +5,8 @@ const initialState = {
   parts_of_speech: {},
   sentence: {},
   givenSentence: '',
-  scrambledContent:{}
+  scrambledContent:{},
+  selectScrambled: {}
 }
 
 const userReducer = (state=initialState, action)=>{
@@ -40,6 +41,11 @@ const userReducer = (state=initialState, action)=>{
           return{...state,givenSentence: action.payload}
     case "GET_SCRAMBLED":
           return{...state,scrambledContent: action.payload}
+    case "SELECT_SCRAMBLED":
+          return{...state,selectScrambled: action.payload}
+    case "UNSELECT_SCRAMBLED":
+          return {...state, selectScrambled: action.payload}
+
     default:
     return state;
   }

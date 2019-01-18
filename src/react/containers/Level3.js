@@ -12,6 +12,12 @@ import hardWords from '../../images/hardWords.jpg'
 
 class Level3 extends Component {
 
+  componentDidMount() {
+    let message = `Welcome to level three, Please Select from words or Sentences to unscramble`
+    let msg = new SpeechSynthesisUtterance(message);
+    window.speechSynthesis.speak(msg);
+  }
+
   render() {
     let level3 =
         <>

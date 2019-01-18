@@ -34,6 +34,9 @@ class Footer extends Component {
                 <li>
                   <Link to="/profile">Profile</Link>
                 </li>
+                <li>
+                  <Link to="/pronounciation">Pronounciation</Link>
+                </li>
               </ul>
             </div>
             <div className="col-md-6">

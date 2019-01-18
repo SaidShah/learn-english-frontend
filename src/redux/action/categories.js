@@ -62,3 +62,17 @@ export const getScrambledContent = (content)=>{
     payload: content
   }
 }
+
+export const selectScrambled = (content)=>{
+  return {
+    type: "SELECT_SCRAMBLED",
+    payload: content
+  }
+}
+
+export const unSelectScrambled=(content)=>{
+  return{
+    type: "UNSELECT_SCRAMBLED",
+    payload: {}
+  }
+}
