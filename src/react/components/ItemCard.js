@@ -43,7 +43,9 @@ class ItemCard extends Component {
   };
 
   isCorrect = (item, message) => {
-    if (message.includes(item.name)) {
+    let userMessage = message.toLowerCase().trim()
+    let itemName = item.name.toLowerCase().trim()
+    if (userMessage.includes(itemName)) {
       this.unSelect(item);
       item.isCorrect = true;
       this.isItCorrect(item);
