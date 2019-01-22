@@ -60,16 +60,30 @@ class UnscrambleCard extends Component {
       item.isCorrect = true;
       this.isItCorrect(item);
     } else {
-      
-      return (
-        <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40} />
-      );
+
+      // return (
+      //   <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40} />
+      // );
+      if(userSaying.length >= solution.length){
+        return <>
+                   <Icon type="error" height={40} width={40} />
+                   <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40} />
+               </>
+      }else{
+        return  <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40} />
+      }
     }
   };
 
   isItCorrect = item => {
     return <Icon type="success" className="is-correct-checkmark" />;
   };
+
+  giveAnswer=(item)=>{
+    this.props.unSelectScrambled(item);
+    let msg = new SpeechSynthesisUtterance(item.solution);
+    window.speechSynthesis.speak(msg);
+  }
 
   render() {
     return (
@@ -87,9 +101,9 @@ class UnscrambleCard extends Component {
         {this.props.isSelected
           ? this.isCorrect(this.props.item, this.props.transcript)
           : ""}
-
         {this.props.item.isCorrect ? this.isItCorrect() : ""}
 
+        <Icon type="play" height="20" width="20" onClick={()=>this.giveAnswer(this.props.item)}/>
         {this.props.isSelected ? (
           <Icon
             type="stop"
