@@ -65,6 +65,12 @@ class ItemCard extends Component {
     return <Icon type="success" className="is-correct-checkmark" />;
   };
 
+  giveAnswer=(item)=>{
+    this.props.unSelectItem(item);
+    let msg = new SpeechSynthesisUtterance(item.name);
+    window.speechSynthesis.speak(msg);
+  }
+
   render() {
     return (
       <div className="item-card">
@@ -85,6 +91,7 @@ class ItemCard extends Component {
           ? this.isCorrect(this.props.item, this.props.transcript)
           : ""}
         {this.props.item.isCorrect ? this.isItCorrect() : ""}
+          <Icon type="play" height="20" width="20" onClick={()=>this.giveAnswer(this.props.item)}/>
         {this.props.isSelected ? (
           <Icon
             type="stop"
