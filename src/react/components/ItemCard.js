@@ -50,9 +50,14 @@ class ItemCard extends Component {
       item.isCorrect = true;
       this.isItCorrect(item);
     } else {
-      return (
-        <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40} />
-      );
+       if(userMessage.length >= itemName.length){
+         return <>
+                    <Icon type="error" height={40} width={40} />
+                    <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40} />
+                </>
+       }else{
+         return  <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40} />
+       }
     }
   };
 

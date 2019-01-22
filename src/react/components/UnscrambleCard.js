@@ -60,6 +60,7 @@ class UnscrambleCard extends Component {
       item.isCorrect = true;
       this.isItCorrect(item);
     } else {
+      
       return (
         <ReactLoading type={"bars"} color={"#2196f3"} height={40} width={40} />
       );
